@@ -5,7 +5,16 @@
     uma classe 'video';
   - Exiba no console os elementos filhos da ul com a classe já inserida.
 */
+const ul = document.querySelector('ul')
+const lis = ul.children
+const lisArray = Array.from(lis)
 
+lisArray.forEach(li => {
+  li.classList.add('video')
+  console.log(li)
+})
+
+console.log(lisArray)
 
 
 /*
@@ -15,7 +24,8 @@
     e exiba-o no console;
 */
 
-
+const h2 = document.querySelector('h2')
+console.log(h2.parentElement)
 
 /*
   03
@@ -23,7 +33,8 @@
   - Descubra quem é o próximo elemento irmão do h1 e exiba-o no console;
 */
 
-
+const h1 = document.querySelector('h1')
+console.log(h1.nextElementSibling)
 
 /*
   04
@@ -31,6 +42,7 @@
   - Descubra quem é o irmão anterior da ul e exiba-o no console;
 */
 
+console.log(ul.previousElementSibling)
 
 
 /*
@@ -40,6 +52,15 @@
     exibida no console.
 */
 
+const newLis = document.querySelectorAll('li')
+newLis.forEach(li => {
+  li.addEventListener('click', event => {
+    // const liClicada = event.target
+    // console.log(liClicada)
+    // console.log(li)
+    console.log(event.target)
+  })
+})
 
 
 /*
@@ -59,6 +80,26 @@ const videos = [{
   name: 'Como fazer requisições HTTP com o método fetch | JavaScript',
   length: '00:02:55'
 }]
+
+const button = document.querySelector('button')
+
+button.addEventListener('click', () => {
+  videos.forEach(video => {
+    const li = document.createElement('li')
+    li.textContent = video.name
+    // console.log(li)
+    ul.append(li)
+  })
+})
+
+
+// videos.forEach(video => {
+//   const testeLi = document.createElement('li')
+//   testeLi.textContent = video.name
+//   // ul.append(testeLi)
+//   console.log(testeLi)
+// })
+
 
 /*
   07
