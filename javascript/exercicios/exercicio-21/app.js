@@ -6,6 +6,13 @@
 */
 
 const randomNumbers = [10, 30, 15, 25, 50, 40, 5]
+// novo array com elementros filtrados conforme determinado na função
+
+const oddNumbers = randomNumbers.filter((element) => {
+  return element % 2 === 1
+})
+
+console.log(oddNumbers)
 
 /*
   02
@@ -15,6 +22,16 @@ const randomNumbers = [10, 30, 15, 25, 50, 40, 5]
 
 const crazyNumbers = [937, 5, 395, 402, 501, 333, 502, 781, 3, 691]
 
+const numbersBelowOf501 = crazyNumbers.reduce((accumulator, currentValue) => {
+  if(currentValue < 501) {
+    accumulator += 1
+  }
+
+  return accumulator
+}, 0)
+
+console.log(numbersBelowOf501)
+
 /*
   03
 
@@ -23,6 +40,12 @@ const crazyNumbers = [937, 5, 395, 402, 501, 333, 502, 781, 3, 691]
 */
 
 const numbers = [5, 7, 3]
+
+const numbersSquared = numbers.map((element) => {
+  return element * element
+})
+
+console.log(numbersSquared)
 
 /*
   04
@@ -42,6 +65,10 @@ const cart = [
   { name: 'Resident Evil 2', price: 119.90 },
   { name: 'Death Stranding', price: 149.99 }
 ]
+
+const listGames = cart.map((element) => {
+  console.log(`- ${element.name}`)
+})
 
 /*
   - Nome 1
@@ -70,6 +97,14 @@ const tarantinoMovies = [
   { name: 'Kill Bill: Volume 1', release: 2003 }
 ]
 
+const filmsBefore2000 = tarantinoMovies.filter((element) => {
+  if(element.release < 2000) {
+    return {name: element.name, release: element.release}
+    // return element
+  }
+})
+
+console.log(filmsBefore2000)
 /*
   06
 
@@ -86,6 +121,13 @@ const tvShows = [
   { name: 'House M.D.', releaseYear: 2004 },
   { name: 'Watchmen', releaseYear: 2019 }
 ]
+
+const namesSeries = tvShows.map((element) => {
+  return element.name
+}) 
+
+console.log(namesSeries)
+
 
 /*
   07
